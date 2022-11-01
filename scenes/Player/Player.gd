@@ -6,12 +6,18 @@ var velocity = Vector2()
 var jump = -300
 var max_speed = 200
 
+
 var limit_jumps = 2
 var jumps = 0
 
 
 var collidig_ladder = false
 var going_up = false
+
+
+var item = [ "item1","item2", "item3" ]
+var max_lista = 3
+
 
 
 func _ready():
@@ -23,7 +29,7 @@ func _ready():
 func _process(delta):
 	
 	animacion()
-	
+
 
 func _physics_process(delta):
 	
@@ -70,7 +76,14 @@ func animacion():
 		$AnimatedSprite.flip_h = false
 	if velocity.x == 0:
 		$AnimatedSprite.animation = "Idle"
-
+	
+# animacion escaleras
+	if collidig_ladder:
+		if Input.is_action_pressed("ui_up"):
+			$AnimatedSprite.playing = true
+			$AnimatedSprite.animation ="climb"
+		elif going_up:
+			$AnimatedSprite.playing = false
 
 
 
@@ -83,12 +96,14 @@ func climb():
 #			$AnimatedSprite.animation ="climb"
 		elif Input.is_action_pressed("ui_down"):
 			going_up = true
-			velocity.y = max(velocity.y + speed, max_speed)
+			velocity.y = max(velocity.y, max_speed)
+#			$AnimatedSprite.playing = true
+#			$AnimatedSprite.animation ="climb"
 		else:
 			if going_up:
 				velocity.y = 0
-				
-			
+#			$AnimatedSprite.playing = false
+
 
 
 

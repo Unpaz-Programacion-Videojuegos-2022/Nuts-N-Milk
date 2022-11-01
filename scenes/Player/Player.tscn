@@ -1,21 +1,24 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://scenes/Player/Sprite/player.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Player/Sprite/quieto 1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Player/Sprite/quieto 0.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Player/Sprite/escalar.png" type="Texture" id=4]
+[ext_resource path="res://scenes/Player/Sprite/escalar2.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "Idle",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [  ],
 "loop": true,
 "name": "MoveLetf",
 "speed": 5.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "climb",
 "speed": 5.0
@@ -32,27 +35,27 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 30.75, 31 )
+extents = Vector2( 23, 32 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 26.25, 29.375 )
+extents = Vector2( 11.5, 23 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
-animation = "climb"
+animation = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1.25, -1 )
+position = Vector2( -1, 0 )
 shape = SubResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 1, -1 )
+position = Vector2( -0.5, 0 )
 shape = SubResource( 3 )
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
