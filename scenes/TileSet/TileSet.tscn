@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/TileSet/sprite/suelo.png" type="Texture" id=1]
+[ext_resource path="res://scenes/TileSet/sprite/escalera 2.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 130, 127.5 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 76.5, 123.5 )
 
 [node name="TileSet" type="Node2D"]
 
@@ -14,5 +18,13 @@ texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/StaticBody2D"]
 position = Vector2( 2.7895e-05, 17.5 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 6 )
+
+[node name="Area2D" type="Area2D" parent="." groups=["ladder"]]
+
+[node name="Sprite" type="Sprite" parent="Area2D"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0.5, 10.5 )
+shape = SubResource( 7 )
