@@ -27,7 +27,7 @@ func _ready():
 
 
 func _process(delta):
-	
+	$AnimatedSprite.playing = true
 	animacion()
 
 
@@ -45,9 +45,10 @@ func move(delta):
 	
 	if is_on_floor():
 		jumps = 0
-	
+		
 	if Input.is_action_pressed("ui_left"):
 		velocity.x -= speed
+		
 		
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += speed
@@ -67,23 +68,34 @@ func apply_jumps():
 
 func animacion():
 	if velocity.x < 0:
-		$AnimatedSprite.animation = ""
+		$AnimatedSprite.animation = "Letf"
 		
 		$AnimatedSprite.flip_h = true
 	if velocity.x > 0:
-		$AnimatedSprite.animation = ""
+		$AnimatedSprite.animation = "Letf"
 		
 		$AnimatedSprite.flip_h = false
 	if velocity.x == 0:
 		$AnimatedSprite.animation = "Idle"
+		
+		
+	#animacion de salto
+	if !is_on_floor():
+		if !collidig_ladder:
+			$AnimatedSprite.animation = "up"
 	
 # animacion escaleras
 	if collidig_ladder:
+		$AnimatedSprite.animation = "climb"
 		if Input.is_action_pressed("ui_up"):
 			$AnimatedSprite.playing = true
-			$AnimatedSprite.animation ="climb"
-		elif going_up:
-			$AnimatedSprite.playing = false
+			$AnimatedSprite.animation = "climb"
+		elif Input.is_action_pressed("ui_down"):
+			$AnimatedSprite.playing = true
+			$AnimatedSprite.animation = "climb"
+
+#		elif going_up:
+#			$AnimatedSprite.playing = false
 
 
 

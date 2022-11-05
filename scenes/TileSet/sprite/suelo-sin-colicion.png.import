@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/escalar2.png-c7b9a3cb42fbe7e0283275849cb2f823.stex"
+path="res://.import/suelo-sin-colicion.png-b92390947acf12a5c6db33d20c7d873f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Player/Sprite/escalar2.png"
-dest_files=[ "res://.import/escalar2.png-c7b9a3cb42fbe7e0283275849cb2f823.stex" ]
+source_file="res://scenes/TileSet/sprite/suelo-sin-colicion.png"
+dest_files=[ "res://.import/suelo-sin-colicion.png-b92390947acf12a5c6db33d20c7d873f.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/quieto 0.png-2ba12efe2d0e7bfb6636f529fa0c707a.stex"
+path="res://.import/caminar-3.png-fc3ba7f26b208edb17e82ac72c0f932f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Player/Sprite/quieto 0.png"
-dest_files=[ "res://.import/quieto 0.png-2ba12efe2d0e7bfb6636f529fa0c707a.stex" ]
+source_file="res://scenes/Player/Sprite/caminar-3.png"
+dest_files=[ "res://.import/caminar-3.png-fc3ba7f26b208edb17e82ac72c0f932f.stex" ]
 
 [params]
 

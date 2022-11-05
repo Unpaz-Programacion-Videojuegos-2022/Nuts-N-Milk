@@ -1,34 +1,37 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://scenes/Player/Sprite/quieto 1.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Player/Sprite/salto.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Player/Player.gd" type="Script" id=2]
-[ext_resource path="res://scenes/Player/Sprite/quieto 0.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Player/Sprite/quieto.png" type="Texture" id=3]
 [ext_resource path="res://scenes/Player/Sprite/escalar.png" type="Texture" id=4]
-[ext_resource path="res://scenes/Player/Sprite/escalar2.png" type="Texture" id=5]
+[ext_resource path="res://scenes/Player/Sprite/caminar-1.png" type="Texture" id=5]
+[ext_resource path="res://scenes/Player/Sprite/caminar-2.png" type="Texture" id=6]
+[ext_resource path="res://scenes/Player/Sprite/caminar-3.png" type="Texture" id=7]
+[ext_resource path="res://scenes/Player/Sprite/escalar-2.png" type="Texture" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 2.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "MoveLetf",
-"speed": 5.0
+"name": "Letf",
+"speed": 7.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "climb",
-"speed": 5.0
+"speed": 9.0
 }, {
 "frames": [  ],
 "loop": true,
 "name": "doble_up",
 "speed": 5.0
 }, {
-"frames": [  ],
+"frames": [ ExtResource( 1 ) ],
 "loop": true,
 "name": "up",
 "speed": 5.0
