@@ -93,12 +93,6 @@ func animacion():
 			$AnimatedSprite.playing = true
 			$AnimatedSprite.animation = "climb"
 			
-		if Input.is_action_pressed("ui_left"):
-			$AnimatedSprite.playing = true
-			$AnimatedSprite.animation = "climb"
-		elif Input.is_action_pressed("ui_right"):
-			$AnimatedSprite.playing = true
-			$AnimatedSprite.animation = "climb"
 
 #		elif going_up:
 #			$AnimatedSprite.playing = false
