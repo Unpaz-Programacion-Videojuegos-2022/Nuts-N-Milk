@@ -15,10 +15,6 @@ var collidig_ladder = false
 var going_up = false
 
 
-var item = [ "item1","item2", "item3" ]
-var max_lista = 3
-
-
 
 func _ready():
 
@@ -34,13 +30,13 @@ func _process(delta):
 func _physics_process(delta):
 	
 	move(delta)
-	if !going_up:
-		velocity.y += gravity * delta
+
 	climb()
 	move_and_slide(velocity, Vector2(0, -1))
 
 
 func move(delta):
+	velocity.y += gravity * delta
 	velocity.x = 0
 	
 	if is_on_floor():
@@ -67,16 +63,18 @@ func apply_jumps():
 
 
 func animacion():
-	if velocity.x < 0:
-		$AnimatedSprite.animation = "Letf"
+	if !going_up:
+		if velocity.x < 0:
+			$AnimatedSprite.animation = "Letf"
+			
+			$AnimatedSprite.flip_h = true
+		if velocity.x > 0:
+			$AnimatedSprite.animation = "Letf"
+			
+			$AnimatedSprite.flip_h = false
 		
-		$AnimatedSprite.flip_h = true
-	if velocity.x > 0:
-		$AnimatedSprite.animation = "Letf"
-		
-		$AnimatedSprite.flip_h = false
-	if velocity.x == 0:
-		$AnimatedSprite.animation = "Idle"
+		if velocity.x == 0:
+			$AnimatedSprite.animation = "Idle"
 		
 		
 	#animacion de salto
@@ -86,11 +84,19 @@ func animacion():
 	
 # animacion escaleras
 	if collidig_ladder:
-		$AnimatedSprite.animation = "climb"
+	
 		if Input.is_action_pressed("ui_up"):
 			$AnimatedSprite.playing = true
 			$AnimatedSprite.animation = "climb"
-		elif Input.is_action_pressed("ui_down"):
+			
+		if Input.is_action_pressed("ui_down"):
+			$AnimatedSprite.playing = true
+			$AnimatedSprite.animation = "climb"
+			
+		if Input.is_action_pressed("ui_left"):
+			$AnimatedSprite.playing = true
+			$AnimatedSprite.animation = "climb"
+		elif Input.is_action_pressed("ui_right"):
 			$AnimatedSprite.playing = true
 			$AnimatedSprite.animation = "climb"
 
@@ -114,7 +120,7 @@ func climb():
 		else:
 			if going_up:
 				velocity.y = 0
-#			$AnimatedSprite.playing = false
+			$AnimatedSprite.playing = false
 
 
 
