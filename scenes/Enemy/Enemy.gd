@@ -19,7 +19,7 @@ func _ready():
 func _physics_process(delta):
 	if estado_actual == estado[0]:
 		$AnimatedSprite.play("Idle")
-		posicion.x -= velocity
+		posicion.x = 0
 	elif estado_actual == estado[1]:
 		$AnimatedSprite.play("Run")
 		posicion.x = velocity
@@ -41,6 +41,7 @@ func _physics_process(delta):
 func _on_Area2D_body_entered(body):
 	body.get_name()
 	if body.is_in_group("player"):
+		
 		movimiento = true
 		
 
