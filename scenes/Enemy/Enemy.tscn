@@ -22,34 +22,35 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 4 ), ExtResource( 2 ), ExtResource( 1 ) ],
 "loop": true,
-"name": "Letf",
+"name": "Run",
 "speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 86.0
-height = 170.0
+radius = 17.0
+height = 36.0
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 805.08
+radius = 249.327
 
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 7 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
 frames = SubResource( 1 )
 animation = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1, 7 )
+position = Vector2( 1, 1 )
 shape = SubResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2( -2, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 2, 3 )
 shape = SubResource( 3 )
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]

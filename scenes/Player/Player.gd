@@ -129,7 +129,7 @@ func _on_Area2D_area_exited(area):
 
 
 func _on_Area2D_area_entered(area):
-	area.get_name()
+	#area.get_name()
 	if area.is_in_group("ladder"):
 		collidig_ladder = true
 		
