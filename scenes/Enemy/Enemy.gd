@@ -10,6 +10,7 @@ var speed = 100
 
 
 
+
 func _physics_process(delta):
 	if movimiento:
 		move_and_slide(velocity)
