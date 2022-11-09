@@ -20,6 +20,8 @@ func _physics_process(delta):
 	move.y += gravity * delta
 	move_and_collide(move)
 	if player != null:
+		$AnimatedSprite.flip_h = true
+		$AnimatedSprite.play("Run")
 		move = position.direction_to(player.position)
 	
 	else:
