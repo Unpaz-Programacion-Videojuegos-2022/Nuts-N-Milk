@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
-var gravity = 300
+var gravity = 80
 var speed = 100
 var velocity = Vector2()
-var jump = -300
+var jump = -110
 var max_speed = 200
 
 
@@ -132,4 +132,5 @@ func _on_Area2D_area_entered(area):
 	#area.get_name()
 	if area.is_in_group("ladder"):
 		collidig_ladder = true
+		
 		

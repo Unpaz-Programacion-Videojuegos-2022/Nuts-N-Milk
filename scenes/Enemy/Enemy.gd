@@ -2,8 +2,9 @@ extends KinematicBody2D
 
 
 var player = null
-var move = Vector2.ZERO
-var speed = 100
+var move = Vector2()
+var speed = 50
+var gravity = 100
 
 
 
@@ -15,13 +16,14 @@ func _ready():
 
 
 func _physics_process(delta):
-	move = Vector2.ZERO
-	
+	move = Vector2()
+	move.y += gravity * delta
+	move_and_collide(move)
 	if player != null:
 		move = position.direction_to(player.position)
 	
 	else:
-		move = Vector2.ZERO
+		move = Vector2()
 	move = move.normalized() * speed
 	move = move_and_slide(move) 
 		
