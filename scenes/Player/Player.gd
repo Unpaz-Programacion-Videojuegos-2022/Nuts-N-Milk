@@ -14,6 +14,7 @@ var jumps = 0
 var collidig_ladder = false
 var going_up = false
 
+var item = 0
 
 
 func _ready():
@@ -132,5 +133,8 @@ func _on_Area2D_area_entered(area):
 	#area.get_name()
 	if area.is_in_group("ladder"):
 		collidig_ladder = true
-		
-		
+	if area.is_in_group("item"):
+		print("sisisisisis")
+		item += 1
+
+
