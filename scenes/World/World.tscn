@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/TileSet/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/World/Ladder.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/Enemy/Enemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Item/item.tscn" type="PackedScene" id=5]
 
 [node name="World" type="Node2D"]
 
@@ -22,3 +23,7 @@ position = Vector2( 114, 324 )
 
 [node name="Enemy" parent="." instance=ExtResource( 4 )]
 position = Vector2( 821, 512 )
+
+[node name="item" parent="." instance=ExtResource( 5 )]
+position = Vector2( 475, 391 )
+scale = Vector2( 0.3, 0.3 )
