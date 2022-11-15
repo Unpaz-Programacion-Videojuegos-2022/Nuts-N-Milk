@@ -20,19 +20,19 @@ tile_data = PoolIntArray( 917500, 3, 0, 851968, 3, 0, 851972, 3, 0, 851976, 3, 0
 position = Vector2( 736, 484 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 114, 324 )
-
-[node name="Enemy" parent="." instance=ExtResource( 4 )]
-position = Vector2( 821, 512 )
+position = Vector2( 100, 94 )
 
 [node name="item_leche" parent="." instance=ExtResource( 6 )]
-position = Vector2( 205, 330 )
-scale = Vector2( 0.3, 0.3 )
+position = Vector2( 148, 350 )
+scale = Vector2( 0.2, 0.2 )
 
 [node name="item_galleta" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1177, 354 )
 scale = Vector2( 0.2, 0.2 )
 
 [node name="item_galleta2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 244, 549 )
+position = Vector2( 233, 549 )
 scale = Vector2( 0.2, 0.2 )
+
+[node name="Enemy" parent="." instance=ExtResource( 4 )]
+position = Vector2( 691, 501 )
