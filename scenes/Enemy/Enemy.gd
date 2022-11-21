@@ -1,48 +1,46 @@
 extends KinematicBody2D
 
 
-var player = null
-var move = Vector2()
-var speed = 50
-var gravity = 100
+var velocidad: int = 70
+var distanciaMov: int = 250
+
+onready var inicioX : float = position.x
+onready var objetivoX: float = position.x + distanciaMov
+
+func _process(delta):
+	$AnimatedSprite.playing = true
+
+func _physics_process(delta: float)-> void:
+	position.x = move_to(position.x, objetivoX, velocidad*delta)
+	
+	if position.x == objetivoX:
+		if objetivoX == inicioX:
+			objetivoX = position.x + distanciaMov
+		else:
+			objetivoX = inicioX
 
 
+func move_to(posahora, hacia, cuanto):
+	var nuevo = posahora
+	#mover hacia la derecha
+	if nuevo < hacia:
+		nuevo += cuanto
+		$AnimatedSprite.flip_h = false
+		if nuevo > hacia:
+			nuevo = hacia
+		
 
-
-func _ready():
+	 #mover hacia la izquierda
+	else:
+		nuevo -= cuanto
+		$AnimatedSprite.flip_h = true
+		if nuevo < hacia:
+			nuevo = hacia
+	return nuevo
 	pass
 
 
 
 
-func _physics_process(delta):
-	move = Vector2()
-	move.y += gravity * delta
-	move_and_collide(move)
-	if player != null:
-		$AnimatedSprite.flip_h = true
-		$AnimatedSprite.play("Run")
-		move = position.direction_to(player.position)
-	
-	else:
-		move = Vector2()
-	move = move.normalized() * speed
-	move = move_and_slide(move) 
-		
-	
-	
-	
 
-func _on_Area2D_body_entered(body):
-	if body != self:
-		player = body
-		
-
-
-		
-
-
-func _on_Area2D_body_exited(body):
-	player = null
-	
 	
