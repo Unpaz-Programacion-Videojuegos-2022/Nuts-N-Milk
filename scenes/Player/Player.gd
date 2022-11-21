@@ -122,12 +122,6 @@ func climb():
 
 
 
-func _on_Area2D_area_exited(area):
-	area.get_name()
-	if area.is_in_group("ladder"):
-		collidig_ladder = false
-		going_up = false
-
 
 func _on_Area2D_area_entered(area):
 	#area.get_name()
@@ -138,3 +132,9 @@ func _on_Area2D_area_entered(area):
 		item += 1
 
 
+
+
+func _on_Area2D_body_entered(body):
+	if body.is_in_group("ladder"):
+		self.queue_free()
+	pass 
