@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/TileSet/sprite/suelo.png" type="Texture" id=1]
 [ext_resource path="res://scenes/TileSet/sprite/escalera 2.png" type="Texture" id=2]
+[ext_resource path="res://scenes/TileSet/sprite/17471f55-6e63-4df5-a386-14336bc2d025.jpg" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 130, 127.5 )
@@ -10,6 +11,16 @@ extents = Vector2( 130, 127.5 )
 extents = Vector2( 76.5, 123.5 )
 
 [node name="TileSet" type="Node2D"]
+
+[node name="fondo" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="fondo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fondo/StaticBody2D"]
+position = Vector2( 2.7895e-05, 17.5 )
+shape = SubResource( 6 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.5, 0.5 )
