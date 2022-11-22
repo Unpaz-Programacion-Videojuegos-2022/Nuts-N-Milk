@@ -43,6 +43,7 @@ func move(delta):
 	if is_on_floor():
 		jumps = 0
 		
+		
 	if Input.is_action_pressed("ui_left"):
 		velocity.x -= speed
 		
@@ -65,6 +66,8 @@ func apply_jumps():
 
 func animacion():
 	if !going_up:
+		$AudioStreamPlayer.playing = true
+		yield(get_tree().create_timer(0.3),"timeout")
 		if velocity.x < 0:
 			$AnimatedSprite.animation = "Letf"
 			
@@ -115,6 +118,7 @@ func climb():
 		else:
 			if going_up:
 				velocity.y = 0
+				
 			$AnimatedSprite.playing = false
 
 

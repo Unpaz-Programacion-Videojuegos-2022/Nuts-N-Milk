@@ -7,6 +7,7 @@ var menus = 0
 func _ready():
 	
 	$AnimatedSprite.animation = "menu"
+	$AudioStreamPlayer.playing = true
 	pass
 
 func _physics_process(delta):
