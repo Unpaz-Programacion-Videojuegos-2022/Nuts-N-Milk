@@ -66,8 +66,7 @@ func apply_jumps():
 
 func animacion():
 	if !going_up:
-		$AudioStreamPlayer.playing = true
-		yield(get_tree().create_timer(0.3),"timeout")
+
 		if velocity.x < 0:
 			$AnimatedSprite.animation = "Letf"
 			
