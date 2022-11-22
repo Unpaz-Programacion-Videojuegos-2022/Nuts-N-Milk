@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/TileSet/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/Player/Player.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/Enemy/Enemy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/Item/item_galleta.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/Item/item_leche.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/Item/casa.tscn" type="PackedScene" id=7]
 
 [node name="World" type="Node2D"]
 
@@ -25,8 +26,11 @@ tile_data = PoolIntArray( -1114116, 3, 0, -851972, 3, 0, -720796, 3, 0, -589828,
 [node name="Ladder" parent="." instance=ExtResource( 3 )]
 position = Vector2( 736, 484 )
 
+[node name="casa" parent="." instance=ExtResource( 7 )]
+position = Vector2( 72, 123 )
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 100, 94 )
+position = Vector2( 96, 22 )
 
 [node name="item_leche" parent="." instance=ExtResource( 6 )]
 position = Vector2( 148, 350 )

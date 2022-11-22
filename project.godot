@@ -13,6 +13,10 @@ config_version=4
 config/name="Nuts- N- Milk"
 config/icon="res://icon.png"
 
+[autoload]
+
+VariableGlobal="*res://variable_global.gd"
+
 [display]
 
 window/size/width=1280

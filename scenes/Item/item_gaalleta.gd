@@ -18,5 +18,7 @@ func _ready():
 
 func _on_item_body_entered(body):
 	if body.is_in_group("player"):
+		$AudioStreamPlayer.playing = true
+		yield(get_tree().create_timer(0.3),"timeout")
 		self.queue_free()
 	

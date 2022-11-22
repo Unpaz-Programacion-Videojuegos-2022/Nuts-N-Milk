@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/recoleccion.ogg-d979f3b624a492a175d12408aa79a32b.oggstr"
+
+[deps]
+
+source_file="res://sonidos/recoleccion.ogg"
+dest_files=[ "res://.import/recoleccion.ogg-d979f3b624a492a175d12408aa79a32b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

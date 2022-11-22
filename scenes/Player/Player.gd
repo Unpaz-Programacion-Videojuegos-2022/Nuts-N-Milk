@@ -14,7 +14,6 @@ var jumps = 0
 var collidig_ladder = false
 var going_up = false
 
-var item = 0
 
 
 func _ready():
@@ -34,7 +33,8 @@ func _physics_process(delta):
 
 	climb()
 	move_and_slide(velocity, Vector2(0, -1))
-
+	if VariableGlobal.item == 3:
+		print("siieieiieieiaiaa")
 
 func move(delta):
 	velocity.y += gravity * delta
@@ -128,13 +128,19 @@ func _on_Area2D_area_entered(area):
 	if area.is_in_group("ladder"):
 		collidig_ladder = true
 	if area.is_in_group("item"):
-		print("sisisisisis")
-		item += 1
-
+		VariableGlobal.item += 1
 
 
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("ladder"):
 		self.queue_free()
+	pass 
+
+
+func _on_Area2D_area_exited(area):
+	area.get_name()
+	if area.is_in_group("ladder"):
+		collidig_ladder = false
+		going_up = false
 	pass 

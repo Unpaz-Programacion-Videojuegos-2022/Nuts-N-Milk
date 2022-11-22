@@ -45,5 +45,6 @@ func move_to(posahora, hacia, cuanto):
 
 func _on_Area2D_body_entered(body):
 	if body.get_name() == "Player":
+		$AudioStreamPlayer.playing = true
 		body.queue_free()
 		

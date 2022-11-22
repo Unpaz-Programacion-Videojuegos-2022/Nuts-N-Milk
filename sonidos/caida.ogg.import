@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/caida.ogg-a20c8486be61f252490937607729707a.oggstr"
+
+[deps]
+
+source_file="res://sonidos/caida.ogg"
+dest_files=[ "res://.import/caida.ogg-a20c8486be61f252490937607729707a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
